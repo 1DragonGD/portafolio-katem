@@ -1,0 +1,45 @@
+/* Scrollbar personalizado */
+:root {
+    --scrollbar-width: 17px;
+    --scrollbar-track-color: rgb(255, 255, 255);
+    --scrollbar-thumb-color: rgba(198, 172, 147, 0.5);
+    --scrollbar-thumb-hover-color: rgba(198, 172, 147, 0.8);
+}
+
+/* Aplicar scrollbar personalizado a toda la página */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
+}
+
+/* Para navegadores WebKit (Chrome, Safari, etc.) */
+::-webkit-scrollbar {
+    width: var(--scrollbar-width);
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb-color);
+    border-radius: 10px;
+    border: 3px solid var(--scrollbar-track-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scrollbar-thumb-hover-color);
+}
+
+/* Gestión del espacio del scrollbar para evitar saltos */
+body {
+    overflow-y: scroll; /* Forzar siempre scrollbar visible */
+    padding-right: 0 !important; /* Evitar que el padding cambie */
+    margin-right: 0 !important; /* Mantener margen consistente */
+}
+
+/* Clase para prevenir saltos de scroll */
+.no-scroll {
+    overflow: hidden !important;
+    margin-right: var(--scrollbar-width); /* Compensar el ancho del scrollbar */
+} 

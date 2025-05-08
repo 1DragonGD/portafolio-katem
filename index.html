@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="scrollbar.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Galada&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img class="imagen-logo" src="./images/logo_katemcita.png" alt="">
+        </div>
+        <div class="encapsular1">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="./proyectos.html">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <!-- Aquí se pueden agregar más elementos de navegación -->
+            </ul>
+        </nav>
+    </header>
+    <div class="menu-overlay"></div>
+    <div class="introduccion">
+        <div class="texto">
+            <h2>¡Bienvenido a mi portafolio!</h2>
+                <p>Aquí encontrarás una selección de mis proyectos, junto con las habilidades y técnicas que aplico en cada creación.</p>
+                
+                <p>Cada obra refleja mi dedicación al detalle y la evolución constante de mi estilo artístico. ¡Espero que disfrutes explorándolo tanto como yo disfruto crearlo!</p>
+            <button class="btn-empezar" id="boton-desplazar" style="font-family: 'Libre Bodoni', serif;">Explorar</button>
+        </div>
+        <div class="imagen">
+            <img src="./images/Katem_anime_xdd-removebg-preview.png" alt="">
+        </div>
+    </div>
+    <main>
+        <h1>Sobre mi arte</h1>
+        <section class="section-1">
+            <div class="section-content">
+                <div class="section-text">
+                    <h2>Proyectos</h2>
+                    <p>Aquí encontrarás información sobre mis proyectos más destacados y mi proceso creativo.</p>
+                    <button class="ver-proyectos-btn">Ver Proyectos</button>
+                </div>
+                <div class="section-image">
+                    <img src="./images/106_sin_titulo.png" alt="Vista previa de proyectos">
+                </div>
+            </div>
+        </section>
+        
+        <section class="section-2">
+            <div class="section-content">
+                <div class="section-text">
+                    <h2>Mis mejores artes de dibujo</h2>
+                    <p>Una selección de mis obras favoritas, en las que he aplicado diversas técnicas y estilos artísticos. Cada pieza representa un momento especial en mi evolución como artista.</p>
+                    <p>Me enfoco en capturar la esencia de mis personajes a través de expresiones únicas y composiciones dinámicas, experimentando constantemente con diferentes paletas de colores y técnicas mixtas.</p>
+                </div>
+                <div class="section-image">
+                    <div class="carrusel desktop-carousel">
+                        <div class="carrusel-contenedor">
+                            <img src="./images/mejores_dibujos1.png" alt="Dibujo 1" class="carrusel-imagen activa">
+                            <img src="./images/mejores_dibujos2.png" alt="Dibujo 2" class="carrusel-imagen">
+                            <img src="./images/mejores_dibujos3.png" alt="Dibujo 3" class="carrusel-imagen">
+                            <img src="./images/mejores_dibujos4.png" alt="Dibujo 4" class="carrusel-imagen">
+                            <img src="./images/mejores_dibujos5.png" alt="Dibujo 4" class="carrusel-imagen">
+                        </div>
+                        <div class="carrusel-controles">
+                            <button class="carrusel-btn prev" aria-label="Imagen anterior">❮</button>
+                            <div class="carrusel-puntos">
+                                <span class="punto activo" data-index="0"></span>
+                                <span class="punto" data-index="1"></span>
+                                <span class="punto" data-index="2"></span>
+                                <span class="punto" data-index="3"></span>
+                                <span class="punto" data-index="4"></span>
+                            </div>
+                            <button class="carrusel-btn next" aria-label="Siguiente imagen">❯</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Carrusel móvil para pantallas pequeñas -->
+                    <div class="mobile-carousel-container">
+                        <div class="mobile-carousel">
+                            <div class="carrusel-contenedor">
+                                <img src="./images/mejores_dibujos1.png" alt="Dibujo 1" class="carrusel-imagen activa">
+                                <img src="./images/mejores_dibujos2.png" alt="Dibujo 2" class="carrusel-imagen">
+                                <img src="./images/mejores_dibujos3.png" alt="Dibujo 3" class="carrusel-imagen">
+                                <img src="./images/mejores_dibujos4.png" alt="Dibujo 4" class="carrusel-imagen">
+                                <img src="./images/mejores_dibujos5.png" alt="Dibujo 5" class="carrusel-imagen">
+                            </div>
+                            <div class="carrusel-controles">
+                                <button class="carrusel-btn prev" aria-label="Imagen anterior">❮</button>
+                                <div class="carrusel-puntos">
+                                    <span class="punto activo" data-index="0"></span>
+                                    <span class="punto" data-index="1"></span>
+                                    <span class="punto" data-index="2"></span>
+                                    <span class="punto" data-index="3"></span>
+                                    <span class="punto" data-index="4"></span>
+                                </div>
+                                <button class="carrusel-btn next" aria-label="Siguiente imagen">❯</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section-3">
+            <div class="section-content">
+                <div class="section-text">
+                    <h2>Sobre las herramientas de dibujo</h2>
+                    <p>Para dar vida a mis ilustraciones, utilizo herramientas digitales como Ibis Paint X, combinadas con mi pasión por el arte tradicional. Mi proceso creativo inicia con bocetos llenos de expresividad, que luego perfecciono digitalmente, explorando colores, trazos y detalles.</p>
+                    <p>La versatilidad de mis métodos me permite innovar y evolucionar constantemente en mi estilo, fusionando lo mejor del arte manual y digital.</p>
+                </div>
+                <div class="section-image">
+                    <img src="./images/imagen_herramienta.png" alt="Herramientas de dibujo">
+                </div>
+            </div>
+        </section>
+    </main>
+    <section id="contacto" class="contact-section">
+        <div class="contact-container">
+            <div class="contact-header">
+                <h2>Contacto</h2>
+                <p>¡Conéctate conmigo a través de mis redes sociales!</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="icon">📧</i>
+                        <p>Katemcita@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="icon">📍</i>
+                        <p>Carabobo, Venezuela</p>
+                    </div>
+                </div>
+                <div class="contact-image">
+                    <img src="./images/30_sin_titulo_Restaurado_20250213185140-Photoroom.png" alt="Imagen de contacto">
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="https://discord.gg/E8pKzNsp7Y" target="_blank" class="social-link discord">
+                    <img src="./images/discord.png" class="icon" style="width: 30px; height: 20px; vertical-align: middle; margin-right: 8px;"> <span>Discord</span>
+                </a>
+                <a href="https://www.instagram.com/katemcita" target="_blank" class="social-link instagram">
+                    <img src="./images/instagram.png" class="icon" style="width: 28px; height: 25px; vertical-align: middle; margin-right: 8px;"> <span>Instagram</span>
+                </a>
+                <a href="https://www.tiktok.com/@katemcitaa" target="_blank" class="social-link tiktok">
+                    <img src="./images/tiktok.png" class="icon" style="width: 30px; height: 30px; vertical-align: middle; margin-right: 8px;"> <span>TikTok</span>
+                </a>
+                <a href="https://www.roblox.com/es/users/4089784925/profile" target="_blank" class="social-link roblox">
+                    <img src="./images/Roblox_Logo.jpg" class="icon" style="width: 32px; height: 32px; vertical-align: middle; margin-right: 8px; border-radius: 10px;"> <span>Roblox</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 Katemcita</p>
+    </footer>
+    <script src="scrollbar.js"></script>
+    <script src="events.js"></script>
+    <script src="particles.js"></script>
+    <script src="animations.js"></script>
+    <script src="menu.js"></script>
+    <script src="carrusel-responsive.js"></script>
+</body>
+</html>

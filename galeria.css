@@ -1,0 +1,466 @@
+/* Estilos base para la galería */
+.galeria-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-flow: dense;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 40px;
+    width: 100%;
+    background: transparent;
+}
+
+.galeria-main h1 {
+    text-align: center;
+    margin: 40px 0;
+    font-family: 'Galada', sans-serif;
+    font-size: 45px;
+    color: #C6AC93;
+    text-transform: capitalize;
+}
+
+.galeria-imagen {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.galeria-imagen:hover {
+    transform: scale(1.02);
+}
+
+.galeria-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    background: transparent;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+/* Estilos para imágenes horizontales */
+.galeria-imagen.horizontal {
+    grid-column: span 2;
+}
+
+/* Estilos para imágenes verticales */
+.galeria-imagen.vertical {
+    grid-row: span 2;
+    height: auto;
+}
+
+/* Estilos para imágenes casi cuadradas pero ligeramente horizontales */
+.galeria-imagen.minihorizontal {
+    grid-column: span 1;
+    aspect-ratio: 1.2 / 1;
+    height: auto;
+}
+
+.galeria-imagen.horizontal img {
+    object-fit: cover;
+}
+
+.galeria-imagen.vertical img {
+    object-fit: cover;
+}
+
+.galeria-imagen.minihorizontal img {
+    object-fit: cover;
+}
+
+/* Estilos para el botón de retorno */
+.boton-retorno {
+    position: fixed;
+    left: 20px;
+    top: 130px;
+    background: rgba(237, 211, 187, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    z-index: 998;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.boton-retorno:hover {
+    background: rgba(198, 172, 147, 0.9);
+    transform: scale(1.1);
+}
+
+/* Ocultar botón de retorno cuando el menú está activo */
+.menu-overlay.active ~ .boton-retorno,
+.menu-overlay.active + .boton-retorno {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.icono-retorno {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+/* Estilos para el visor de imagen modal */
+.modal-imagen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.modal-imagen.activo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-contenido {
+    position: relative;
+    max-width: 95%;
+    max-height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    overflow: visible; /* Permitir que el contenido se desborde */
+}
+
+/* Contenedor para zoom y pan */
+.zoom-contenedor {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: padding 0.2s ease, background-color 0.2s ease, border-radius 0.2s ease;
+}
+
+/* Aplicar un poco de espacio cuando hay zoom */
+.zoom-contenedor.con-zoom {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos adicionales para zoom alto (>200%) */
+.zoom-contenedor.zoom-alto {
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 16px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.modal-imagen img {
+    max-width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    transform-origin: center;
+    transition: transform 0.1s ease;
+    cursor: grab; /* Cursor para indicar que se puede arrastrar */
+}
+
+/* Cursor cuando se está arrastrando */
+.modal-imagen img.arrastrando {
+    cursor: grabbing;
+}
+
+/* Estilos para imagen con zoom */
+.modal-imagen img.con-zoom {
+    /* Sin transición para el movimiento fluido */
+    transition: none;
+}
+
+/* Optimizaciones para imágenes horizontales en el modal */
+.modal-imagen img.horizontal {
+    max-width: 90vw;
+    max-height: 80vh;
+    width: auto;
+}
+
+/* Optimizaciones para imágenes verticales en el modal */
+.modal-imagen img.vertical {
+    max-height: 85vh;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Indicador de zoom */
+.zoom-indicador {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(237, 211, 187, 0.7);
+    color: #333;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2002;
+    pointer-events: none; /* Evitar que el indicador intercepte clics */
+}
+
+.zoom-indicador.visible {
+    opacity: 1;
+}
+
+.boton-cerrar-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(237, 211, 187, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 2001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.boton-cerrar-modal:hover {
+    background: rgba(198, 172, 147, 0.9);
+    transform: scale(1.1);
+}
+
+.icono-cerrar {
+    width: 20px;
+    height: 20px;
+    font-size: 24px;
+    color: #333;
+    position: relative;
+}
+
+.icono-cerrar::before,
+.icono-cerrar::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    background-color: #333;
+    top: 50%;
+    left: 0;
+}
+
+.icono-cerrar::before {
+    transform: rotate(45deg);
+}
+
+.icono-cerrar::after {
+    transform: rotate(-45deg);
+}
+
+/* Media queries para la galería */
+@media (max-width: 768px) {
+    .galeria-container {
+        grid-template-columns: 1fr;
+        grid-auto-rows: minmax(250px, auto);
+    }
+
+    .galeria-main h1 {
+        font-size: 35px;
+        margin: 30px 0;
+    }
+
+    .galeria-imagen.horizontal,
+    .galeria-imagen.minihorizontal {
+        grid-column: span 1;
+    }
+
+    .galeria-imagen.vertical {
+        grid-row: span 1;
+    }
+
+    .boton-retorno {
+        width: 40px;
+        height: 40px;
+        top: 110px;
+    }
+
+    .icono-retorno {
+        width: 25px;
+        height: 25px;
+    }
+
+    .boton-cerrar-modal {
+        width: 40px;
+        height: 40px;
+        top: 15px;
+        right: 15px;
+    }
+}
+
+/* Estilos para el menú encapsulado */
+.encapsular1 {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+    position: relative;
+    margin-right: 5px;
+}
+
+.encapsular1 span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #FEF9F5;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Overlay para destacar el menú */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+        justify-content: space-between;
+    }
+
+    .encapsular1 {
+        display: block;
+        z-index: 1002; /* Mayor que el nav para estar siempre por encima */
+    }
+
+    .imagen-logo {
+        width: 15vh;
+        height: 6vh;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: auto;
+        min-width: 200px;
+        height: auto;
+        max-height: 80vh;
+        background-color: rgba(237, 211, 187, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(15px);
+        transition: right 0.3s ease;
+        z-index: 1001; /* Mayor que el overlay */
+        margin: 0;
+        padding: 60px 25px 25px;
+        box-shadow: -2px 5px 15px rgba(104, 84, 66, 0.2);
+        border-radius: 0 0 0 15px;
+        overflow-y: auto;
+    }
+
+    nav.active {
+        right: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav li {
+        margin: 12px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav a {
+        display: block;
+        padding: 10px 15px;
+        font-size: 1.1em;
+        color: #FEF9F5;
+        transition: all 0.3s ease;
+        border-radius: 8px;
+    }
+
+    nav a:hover {
+        background-color: rgba(198, 172, 147, 0.3);
+        transform: translateX(-5px);
+    }
+
+    /* Animación del menú encapsulado */
+    .encapsular1.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .encapsular1.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .encapsular1.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    /* ... existing mobile styles ... */
+}
+
+/* Estilos para el header fijo */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(104, 84, 66, 0.2);
+    transition: background-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 115px; /* Compensar el header fijo */
+} 

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Proyectos</title>
+    <link rel="stylesheet" href="scrollbar.css">
+    <link rel="stylesheet" href="proyectos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Galada&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="particles"></div>
+    
+    <header>
+        <div class="logo">
+            <img class="imagen-logo" src="./images/logo_katemcita.png" alt="">
+        </div>
+        <div class="encapsular1">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="./index.html#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="menu-overlay"></div>
+
+    <main>
+        <h1 class="animate-hidden" style="text-align: center; margin: 40px 0;">Mis Categorías de Dibujo</h1>
+        
+        <div class="categorias-container">
+            <a class="categoria animate-hidden" href="galeria.html?categoria=anime">
+                <img src="./images/vista_previa_anime.png" alt="Anime" class="categoria-imagen">
+                <div class="categoria-contenido">
+                    <h2 class="categoria-titulo">Anime</h2>
+                    <div class="categoria-descripcion">
+                        <p>Adéntrate en mi mundo de ilustraciones de estilo anime, con personajes dinámicos y escenas vibrantes.</p>
+                    </div>
+                </div>
+            </a>
+
+            <a class="categoria animate-hidden" href="galeria.html?categoria=chibi">
+                <img src="./images/vista_previa_chibi.png" alt="Chibi" class="categoria-imagen">
+                <div class="categoria-contenido">
+                    <h2 class="categoria-titulo">Chibi</h2>
+                    <div class="categoria-descripcion">
+                        <p>Echa un vistazo a mis diseños estilizados, dándole toque de ternura y un poco de mezcla de anime!</p>
+                    </div>
+                </div>
+            </a>
+
+            <a class="categoria animate-hidden" href="galeria.html?categoria=fondos">
+                <img src="./images/vista_previa_fondo.png" alt="Fondo de Pantalla" class="categoria-imagen">
+                <div class="categoria-contenido">
+                    <h2 class="categoria-titulo">Fondos de Pantalla</h2>
+                    <div class="categoria-descripcion">
+                        <p>Enamórate de mis diseños de fondos de pantalla personalizados! Incluye diseños de banners, fotos de perfil y más!</p>
+                    </div>
+                </div>
+            </a>
+
+            <a class="categoria animate-hidden" href="galeria.html?categoria=cubito">
+                <img src="./images/vista_previa_dibujo.png" alt="Cubito" class="categoria-imagen">
+                <div class="categoria-contenido">
+                    <h2 class="categoria-titulo">Cubito</h2>
+                    <div class="categoria-descripcion">
+                        <p>Descubre mis diseños de cubitos, dándole toques geométricos!</p>
+                    </div>
+                </div>
+            </a>
+
+            <a class="categoria animate-hidden" href="galeria.html?categoria=personalizado">
+                <img src="./images/vista_previa_personalizado.jpg" alt="Personalizado" class="categoria-imagen">
+                <div class="categoria-contenido">
+                    <h2 class="categoria-titulo">Personalizado</h2>
+                    <div class="categoria-descripcion">
+                        <p>También hago dibujos personalizados, mezclando categorías de dibujo y más!</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Katemcita</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = [
+                document.querySelector('main h1'),
+                ...document.querySelectorAll('.categoria')
+            ];
+            
+            function isElementInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.85 &&
+                    rect.bottom >= 0
+                );
+            }
+            
+            function animateVisibleElements() {
+                animatedElements.forEach(element => {
+                    if (isElementInViewport(element) && element.classList.contains('animate-hidden')) {
+                        element.classList.remove('animate-hidden');
+                        element.classList.add('animate-visible');
+                    }
+                });
+            }
+            
+            setTimeout(() => {
+                animateVisibleElements();
+                setupDynamicHeights();
+            }, 100);
+            
+            window.addEventListener('scroll', animateVisibleElements);
+        });
+    </script>
+    <script src="scrollbar.js"></script>
+    <script src="particles.js"></script>
+    <script src="menu.js"></script>
+</body>
+</html> 
