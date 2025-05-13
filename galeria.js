@@ -2,13 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Datos de ejemplo para las imágenes
     const imagenesPorCategoria = {
         anime: [
-            { src: '/Katemdibujos/Anime/imagen_anime1.png', alt: 'Dibujo Anime 1' },
-            { src: '/Katemdibujos/Anime/imagen_anime2.png', alt: 'Dibujo Anime 2' },
-            { src: '/Katemdibujos/Anime/imagen_anime3.png', alt: 'Dibujo Anime 3' },
-            { src: '/Katemdibujos/Anime/imagen_anime4.png', alt: 'Dibujo Anime 4' },
-            { src: '/Katemdibujos/Anime/imagen_anime5.png', alt: 'Dibujo Anime 5' },
-            { src: '/Katemdibujos/Anime/imagen_anime6.png', alt: 'Dibujo Anime 6' },
-            { src: '/Katemdibujos/Anime/imagen_anime7.png', alt: 'Dibujo Anime 7' }
+            { src: 'Katemdibujos/Anime/imagen_anime1.png', alt: 'Dibujo Anime 1' },
+            { src: 'Katemdibujos/Anime/imagen_anime2.png', alt: 'Dibujo Anime 2' },
+            { src: 'Katemdibujos/Anime/imagen_anime3.png', alt: 'Dibujo Anime 3' },
+            { src: 'Katemdibujos/Anime/imagen_anime4.png', alt: 'Dibujo Anime 4' },
+            { src: 'Katemdibujos/Anime/imagen_anime5.png', alt: 'Dibujo Anime 5' },
+            { src: 'Katemdibujos/Anime/imagen_anime6.png', alt: 'Dibujo Anime 6' },
+            { src: 'Katemdibujos/Anime/imagen_anime7.png', alt: 'Dibujo Anime 7' }
         ],
         chibi: [
             { src: './Katemdibujos/Chibi/imagen_chibi1.png', alt: 'Dibujo Chibi 1' },
