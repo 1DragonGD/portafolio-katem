@@ -11,32 +11,32 @@ document.addEventListener('DOMContentLoaded', () => {
             { src: 'Katemdibujos/Anime/imagen_anime7.png', alt: 'Dibujo Anime 7' }
         ],
         chibi: [
-            { src: './Katemdibujos/Chibi/imagen_chibi1.png', alt: 'Dibujo Chibi 1' },
-            { src: './Katemdibujos/Chibi/imagen_chibi2.png', alt: 'Dibujo Chibi 2' },
-            { src: './Katemdibujos/Chibi/imagen_chibi3.png', alt: 'Dibujo Chibi 3' },
-            { src: './Katemdibujos/Chibi/imagen_chibi4.jpg', alt: 'Dibujo Chibi 4' },
-            { src: './Katemdibujos/Chibi/imagen_chibi5.jpg', alt: 'Dibujo Chibi 5' }
+            { src: 'Katemdibujos/Chibi/imagen_chibi1.png', alt: 'Dibujo Chibi 1' },
+            { src: 'Katemdibujos/Chibi/imagen_chibi2.png', alt: 'Dibujo Chibi 2' },
+            { src: 'Katemdibujos/Chibi/imagen_chibi3.png', alt: 'Dibujo Chibi 3' },
+            { src: 'Katemdibujos/Chibi/imagen_chibi4.jpg', alt: 'Dibujo Chibi 4' },
+            { src: 'Katemdibujos/Chibi/imagen_chibi5.jpg', alt: 'Dibujo Chibi 5' }
         ],
         fondos: [
-            { src: './Katemdibujos/Fondos de Pantalla/imagen_fondo1.png', alt: 'Dibujo Fondo 1' },
-            { src: './Katemdibujos/Fondos de Pantalla/imagen_fondo2.png', alt: 'Dibujo Fondo 2' },
-            { src: './Katemdibujos/Fondos de Pantalla/imagen_fondo3.png', alt: 'Dibujo Fondo 3' },
-            { src: './Katemdibujos/Fondos de Pantalla/imagen_fondo4.png', alt: 'Dibujo Fondo 4' },
-            { src: './Katemdibujos/Fondos de Pantalla/imagen_fondo5.png', alt: 'Dibujo Fondo 5' }
+            { src: 'Katemdibujos/Fondos de Pantalla/imagen_fondo1.png', alt: 'Dibujo Fondo 1' },
+            { src: 'Katemdibujos/Fondos de Pantalla/imagen_fondo2.png', alt: 'Dibujo Fondo 2' },
+            { src: 'Katemdibujos/Fondos de Pantalla/imagen_fondo3.png', alt: 'Dibujo Fondo 3' },
+            { src: 'Katemdibujos/Fondos de Pantalla/imagen_fondo4.png', alt: 'Dibujo Fondo 4' },
+            { src: 'Katemdibujos/Fondos de Pantalla/imagen_fondo5.png', alt: 'Dibujo Fondo 5' }
         ],
         cubito: [
-            { src: './Katemdibujos/Cubito/imagen_cubito1.png', alt: 'Dibujo Cubito 1' },
-            { src: './Katemdibujos/Cubito/imagen_cubito2.png', alt: 'Dibujo Cubito 2' },
-            { src: './Katemdibujos/Cubito/imagen_cubito3.png', alt: 'Dibujo Cubito 3' },
-            { src: './Katemdibujos/Cubito/imagen_cubito4.png', alt: 'Dibujo Cubito 4' },
-            { src: './Katemdibujos/Cubito/imagen_cubito5.png', alt: 'Dibujo Cubito 5' },
-            { src: './Katemdibujos/Cubito/imagen_cubito6.png', alt: 'Dibujo Cubito 6' }
+            { src: 'Katemdibujos/Cubito/imagen_cubito1.png', alt: 'Dibujo Cubito 1' },
+            { src: 'Katemdibujos/Cubito/imagen_cubito2.png', alt: 'Dibujo Cubito 2' },
+            { src: 'Katemdibujos/Cubito/imagen_cubito3.png', alt: 'Dibujo Cubito 3' },
+            { src: 'Katemdibujos/Cubito/imagen_cubito4.png', alt: 'Dibujo Cubito 4' },
+            { src: 'Katemdibujos/Cubito/imagen_cubito5.png', alt: 'Dibujo Cubito 5' },
+            { src: 'Katemdibujos/Cubito/imagen_cubito6.png', alt: 'Dibujo Cubito 6' }
         ],
         personalizado: [
-            { src: './Katemdibujos/Personalizado/imagen_personalizado1.jpg', alt: 'Dibujo Personalizado 1' },
-            { src: './Katemdibujos/Personalizado/imagen_personalizado2.png', alt: 'Dibujo Personalizado 2' },
-            { src: './Katemdibujos/Personalizado/imagen_personalizado3.png', alt: 'Dibujo Personalizado 3' },
-            { src: './Katemdibujos/Personalizado/imagen_personalizado4.png', alt: 'Dibujo Personalizado 4' },
+            { src: 'Katemdibujos/Personalizado/imagen_personalizado1.jpg', alt: 'Dibujo Personalizado 1' },
+            { src: 'Katemdibujos/Personalizado/imagen_personalizado2.png', alt: 'Dibujo Personalizado 2' },
+            { src: 'Katemdibujos/Personalizado/imagen_personalizado3.png', alt: 'Dibujo Personalizado 3' },
+            { src: 'Katemdibujos/Personalizado/imagen_personalizado4.png', alt: 'Dibujo Personalizado 4' },
         ]
     };
 
